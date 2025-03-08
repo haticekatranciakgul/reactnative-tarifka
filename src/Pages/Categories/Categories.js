@@ -6,7 +6,7 @@ import config from '../../../config';
 import { API_URL_CATEGORIES } from '@env';
 import CategoryCard from '../../Components/CategoryCard/CategoryCard';
 import useFetch from '../../hook/useFetch';
-
+import styles from './Categories.style'
 
 const Categories = ({navigation}) => {
   const {data} = useFetch(API_URL_CATEGORIES);
@@ -22,7 +22,7 @@ const Categories = ({navigation}) => {
 
 
   return (
-    <View >
+    <View style={styles.container}>
       <FlatList
         data={data.categories}
         keyExtractor={(item) => item.idCategory}

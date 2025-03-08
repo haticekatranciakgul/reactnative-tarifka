@@ -1,16 +1,24 @@
 import React from 'react';
-import {View, Text, Image, Linking, TouchableOpacity} from 'react-native';
+import { View, Text, Image, Linking, TouchableOpacity } from 'react-native';
+import styles from './DetailCard.style';
 
 
-const DetailCard = ({detail}) => {
+const DetailCard = ({ detail }) => {
     return (
-        <View>
-            <Image source={{uri: detail.strMealThumb}} style={{width: 400, height: 200}} />
-            <Text>{detail.strMeal}</Text>
-            <Text>{detail.strInstructions}</Text>
-            <TouchableOpacity onPress={() => Linking.openURL(detail.strYoutube)}>
-                <Text>Watch Video</Text>
-            </TouchableOpacity>
+        <View style={styles.container}>
+            <Image style={styles.image} source={{ uri: detail.strMealThumb }} />
+            <View style={styles.infoContainer}>
+                <Text style={styles.title}> {detail.strMeal}</Text>
+                <Text style={styles.subTitle}> {detail.strCategory}</Text>
+            </View>
+            <View style={styles.bodyContainer}>
+                <Text>{detail.strInstructions}</Text>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => Linking.openURL(detail.strYoutube)}>
+                    <Text style={styles.buttonText}>Watch Video</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }

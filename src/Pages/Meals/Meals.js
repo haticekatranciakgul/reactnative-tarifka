@@ -4,6 +4,7 @@ import useFetch from '../../hook/useFetch';
 import { API_URL } from '@env';
 import MealCard from '../../Components/MealCard/MealCard';
 import config from '../../../config';
+import styles from './Meals.style';
 
 const Meals = ({navigation, route}) => {
     const {strCategory} = route.params;
