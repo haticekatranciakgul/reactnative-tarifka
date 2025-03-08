@@ -10,9 +10,9 @@ const Meals = ({navigation, route}) => {
 
     const { data} = useFetch(`${config.API_URL_MEALS}=${strCategory}`);
 
-    console.log(strCategory);
-    const handleSelectMeal = idMeal => {
-        navigation.navigate('DetailScreen', {idMeal});
+   
+    const handleMeals = idMeal => {
+        navigation.navigate('DetailPage', {idMeal});
       };
     const renderMealCard = ({item}) =><MealCard  meals={item} onSelect={() => handleMeals(item.idMeal)} />
 

@@ -6,21 +6,19 @@ const deviceSize = Dimensions.get('window');
 const MealCard = ({ meals, onSelect }) => {
     return (
         <TouchableWithoutFeedback onPress={onSelect}>
-            <Text>{meals.strMeal}</Text>
-
-            {/* <View style={styles.container}>
-                <View style={styles.imageContainer}>
+            <View >
+                <View >
                     <ImageBackground
-                        style={styles.image}
+                        
                         imageStyle={{ borderRadius: 15 }}
                         source={{ uri: meals.strMealThumb }}
                     >
-                        <View style={styles.titleContainer}>
-                            <Text numberOfLines={1} style={styles.title}>{meals.strMeal}</Text>
+                        <View>
+                            <Text numberOfLines={1}>{meals.strMeal}</Text>
                         </View>
                     </ImageBackground>
                 </View>
-            </View> */}
+            </View>
         </TouchableWithoutFeedback>
     )
 }
