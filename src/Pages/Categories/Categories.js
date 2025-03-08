@@ -11,13 +11,13 @@ import useFetch from '../../hook/useFetch';
 const Categories = ({navigation}) => {
   const {data} = useFetch(API_URL_CATEGORIES);
 
-  const handleCategorySelect = (idCategory) => {
-    navigation.navigate('MealPage', {idCategory});
-    console.log(idCategory);
+  const handleCategorySelect = (strCategory) => {
+    navigation.navigate('MealPage', {strCategory});
+    console.log(strCategory);
   } 
 
   const renderCategories = ({ item }) => (
-    <CategoryCard category={item} onSelect={() => handleCategorySelect(item.idCategory)} />
+    <CategoryCard category={item} onSelect={() => handleCategorySelect(item.strCategory)} />
 );
 
 

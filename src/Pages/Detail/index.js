@@ -1,1 +1,1 @@
-export {default} from '../Detail/Detail';
+export {default} from './Meals';
